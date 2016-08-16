@@ -1,0 +1,11 @@
+<h1> Add a Post </h1>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :pet_name %>
+    <%= f.input :pet_age %>
+    <%= f.input :pet_breed %>
+    <%= f.input :address_line, :label => "Address" %>
+    <%= f.input :zipcode %>
+    <%= f.input :describe, :label => "Add a Description" %> 
+    <br />
+    <%= f.submit 'Update Ad', class:"btn btn-md btn-success" %>
+  <% end %> 

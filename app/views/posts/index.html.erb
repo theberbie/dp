@@ -1,0 +1,14 @@
+<% @posts.each do |ad| %>
+  <h2> <%= link_to post.pet_name, post_path(post) %> </h2>
+  <br />
+  <i> <%= post.address_line %>
+  <i> <%= post.zipcode %> 
+  <p> <%= post.description %> 
+  <% if post.user.present? %>
+
+  <small><%= post.user.email %></small>
+<% end %>
+
+
+
+<% end %>
