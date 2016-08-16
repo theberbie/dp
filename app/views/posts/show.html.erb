@@ -53,13 +53,11 @@
         <h4 class="modal-title" id="myModalLabel">Add a Review</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @review, url: ad_reviews_path(@ad) do |f| %>
-          <%= f.input :message %>
-          <%=rating_for @review, 'Nice' %>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit "Add a Review", class: 'btn btn-success' %>
+      
       </div>
       <% end %>
     </div>
@@ -68,16 +66,4 @@
 
 
 
-  <h1> Reviews </h1>
-
-  <% @post.reviews.each do | review| %> 
-    <div >
-     <blockquote>
-       <b><%= review.message %> </b>
-       <b>Rating: <%=rating_for @review, 'Nice', disable_after_rate: true%> </b>
-       <small> <%= review.user.email %> </small>
-     </blockquote>
-     </div>
-    <% end %>
-    <% end %>
-   
+  
