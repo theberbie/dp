@@ -44,3 +44,5 @@ gem 'react_on_rails', '~>6'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'therubyracer', platforms: :ruby
