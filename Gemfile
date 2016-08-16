@@ -33,6 +33,8 @@ group :doc do
 end
 
 gem 'react_on_rails', '~>6'
+
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
