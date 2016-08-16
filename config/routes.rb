@@ -1,6 +1,9 @@
 Districtpawsee::Application.routes.draw do
-  get 'hello_world', to: 'hello_world#index'
-  root "hello_world#index"
+  devise_for :users
+ # get 'hello_world', to: 'hello_world#index'
+  root 'static_pages#index'
+  
+  resources :posts 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

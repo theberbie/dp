@@ -1,0 +1,13 @@
+<div class="ad-box col-sm-4 col-xs-10 col-sm-offset-4 col-xs-offset-1 text-center">
+
+<h1> Add a Post </h1>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :pet_name %>
+    <%= f.input :pet_breed %>
+    <%= f.input :address_line, :label => "Address" %>
+    <%= f.input :zipcode %>
+    <%= f.input :descriptino, :label => "Add a Description" %> 
+    <br />
+    <%= f.submit 'Create Ad', class:"btn btn-md btn-success" %>
+  <% end %> 
+</div>
