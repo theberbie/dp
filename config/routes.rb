@@ -1,4 +1,7 @@
 Districtpawsee::Application.routes.draw do
+  namespace :api do
+    resources :posts
+  end
   devise_for :users
  # get 'hello_world', to: 'hello_world#index'
   root 'static_pages#index'
