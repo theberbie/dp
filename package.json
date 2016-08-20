@@ -9,5 +9,17 @@
     "postinstall": "cd client && npm install",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
     "test": "rspec"
+  },
+  "dependencies": {
+    "babel-eslint": "^6.1.2",
+    "babelify": "^7.3.0",
+    "eslint": "^3.3.1",
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5",
+    "react-bootstrap-datetimepicker": "0.0.22",
+    "react-datepicker": "^0.29.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^6.1.1"
   }
 }

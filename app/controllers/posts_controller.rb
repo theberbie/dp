@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    
+
   end
 
   def create
@@ -22,13 +22,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @Post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @Post = Posts.find(params[:id])
+    @post = Post.find(params[:id])
     @post.update_attributes(post_params)
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def destroy
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description)
+    params.require(:post).permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to)
   end
 
 

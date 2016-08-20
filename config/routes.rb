@@ -3,7 +3,7 @@ Districtpawsee::Application.routes.draw do
     resources :posts
   end
   devise_for :users
- # get 'hello_world', to: 'hello_world#index'
+ get 'hello_world', to: 'hello_world#index'
   root 'static_pages#index'
   
   resources :posts 

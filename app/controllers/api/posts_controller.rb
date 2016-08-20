@@ -67,7 +67,7 @@ class Api::PostsController <Api::ApiController
   private
 
   def post_params
-    params.require(:post).permit(:pet_name, :pet_breed, :address_line, :zipcode, :description)
+    params.require(:post).permit(:pet_name, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to)
   end
 
 #   def find_ads

@@ -3,6 +3,11 @@
 
 import React, { PropTypes } from 'react';
 
+var DatePicker = require('react-datepicker');
+var moment = require('moment');
+
+require('react-datepicker/dist/react-datepicker.css');
+
 // Simple example of a React "dumb" component
 export default class HelloWorldWidget extends React.Component {
   static propTypes = {
@@ -30,6 +35,8 @@ export default class HelloWorldWidget extends React.Component {
           <label>
             Say hello to:
           </label>
+          <DatePicker selected={this.state.date} onChange={this.handleChange} />
+
           <input
             type="text"
             value={name}

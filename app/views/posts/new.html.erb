@@ -6,8 +6,44 @@
     <%= f.input :pet_breed %>
     <%= f.input :address_line, :label => "Address" %>
     <%= f.input :zipcode %>
+    
+      
+      <div class='input-group date' id='datetimepicker6'>
+      <%= f.input :event_from, :label => "From", id:"datetimepicker7"%>
+      <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        </div>
+
+        <div class='input-group date' id='datetimepicker7'>
+     <%= f.input :event_to, :label => "To", id:"datetimepicker7"%>
+      <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        </div>
+
+
     <%= f.input :description, :label => "Add a Description" %> 
     <br />
     <%= f.submit 'Create Ad', class:"btn btn-md btn-success" %>
   <% end %> 
+
+
 </div>
+
+
+               
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
