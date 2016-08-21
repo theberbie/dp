@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Districtpawsee</title>
+  <title>District Pawsee</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -30,7 +30,8 @@
             Create a Post
           <% end %>
           </li>
-        
+        <li><%=link_to 'Check out Posts',  posts_path %>
+        </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -49,7 +50,13 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
+<% if notice.present? %>
+  <p class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+</script>
 <%= yield %>
 
 </body>

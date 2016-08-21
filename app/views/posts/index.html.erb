@@ -8,9 +8,7 @@
   <i> To:<%= post.event_to %> </i> 
   <% if post.user.present? %>
 
+  <small><%= post.user.first_name %> </small>
   <small><%= post.user.email %></small>
 <% end %>
-
-<button> <%= link_to 'Request booking', '#' %> </button>
-
 <% end %>

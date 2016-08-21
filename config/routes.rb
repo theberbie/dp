@@ -1,15 +1,18 @@
 Districtpawsee::Application.routes.draw do
-  get "user/bookings"
+  devise_for :users
+  root 'static_pages#index'
+  
   namespace :api do
     resources :posts
   end
-  devise_for :users
- get 'hello_world', to: 'hello_world#index'
-  root 'static_pages#index'
   
-  resources :posts do 
-  resources :bookings, only: :create
-end
+  resources :posts 
+
+   resources :bookings do
+    patch 'time_offer' , on: :member
+    end
+
+  
 
   resources :users, only: :show
 

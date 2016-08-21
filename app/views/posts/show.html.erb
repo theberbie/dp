@@ -3,6 +3,7 @@
 <br />
 <br />
 <p> <%= @post.description %> </p>
+<p> <%= @post.user.first_name %> </p>
 <div class="pull-right">
 <% if current_user && current_user = @post.user %>
   <%=link_to "Edit", edit_post_path(@post), class:'btn btn-md btn-success' %>
@@ -43,8 +44,8 @@
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Add a Review
 </button>
-
- <%= link_to 'Book', post_bookings_path(@post), class:'btn btn-primary' , method: :post%>
+ 
+ <%= link_to 'Offer Your Time', time_offer_booking_path(@post.id), { action: :time_offer, method: :patch }%>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

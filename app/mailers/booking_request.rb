@@ -1,11 +1,10 @@
 class BookingRequest < ActionMailer::Base
   default from: "from@example.com"
 
-  def booking_requested(booking)
-    @post = booking.post
-    @post_owner = @post.user
+  def booking_requested(user)
+    @user = user
 
-    mail(to: @post_owner, 
+    mail(to: @user, 
       subject: "A New Booking Has Been Requested")
 
   end

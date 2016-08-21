@@ -13,13 +13,17 @@ class PostsController < ApplicationController
 
   def create
     current_user.posts.create(post_params)
+
     redirect_to root_path
   end
 
   def show
     @post = Post.find(params[:id])
+    @booking = Booking.new
     
   end
+
+  
 
   def edit
     @post = Post.find(params[:id])
