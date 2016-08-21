@@ -1,4 +1,5 @@
 Districtpawsee::Application.routes.draw do
+  get "user/bookings"
   namespace :api do
     resources :posts
   end
@@ -6,9 +7,16 @@ Districtpawsee::Application.routes.draw do
  get 'hello_world', to: 'hello_world#index'
   root 'static_pages#index'
   
-  resources :posts 
+  resources :posts do 
+  resources :bookings, only: :create
+end
 
-   resources :users, only: :show
+  resources :users, only: :show
+
+
+  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

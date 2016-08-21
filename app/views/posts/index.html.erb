@@ -3,12 +3,14 @@
   <br />
   <i> <%= post.address_line %>
   <i> <%= post.zipcode %> 
-  <p> <%= post.description %> 
+  <p> <%= post.description %> </p>
+  <i> From: <%= post.event_from %> </i>
+  <i> To:<%= post.event_to %> </i> 
   <% if post.user.present? %>
 
   <small><%= post.user.email %></small>
 <% end %>
 
-
+<button> <%= link_to 'Request booking', '#' %> </button>
 
 <% end %>
