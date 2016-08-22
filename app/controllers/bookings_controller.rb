@@ -1,32 +1,25 @@
-class BookingsController < PostsController
+class BookingsController < ApplicationController
 before_action :authenticate_user! 
 
-
-  def time_offer
-    @post = Post.find(params[:id])
-    if @post.user != current_user
-        flash[:notice] = "Request has been sent"
-        BookingRequest.booking_requested(@post).deliver
-        redirect_to post_path(@post)
-      else
-        flash[:alert] = "Cannot book yourself!"
-        redirect_to post_path(@post)
-    end
+  def new
+    @booking = Booking.new
   end
 
-  end
 
+  
   def create
       @post = Post.find(params[:post_id])
+      if params['button_action'] == "accept"
+      @booking.accept = 1
       @post.bookings.create(booking_params.merge(user: current_user))
-
-      if @post.user != current_user
-        flash[:notice] = "Request has been sent"
-        redirect_to post_path(@post)
+      flash[:notice] = "You have accepted!"     
       else
-        flash[:alert] = "Cannot book yourself!"
+        flash[:alert] = "You declined. No worries."
         redirect_to post_path(@post)
     end
+  end
+
+  def update
   end
 
 
@@ -34,5 +27,6 @@ before_action :authenticate_user!
 
 def booking_params
 
- params.permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to)
+ params.permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to, :accept)
+end
 end

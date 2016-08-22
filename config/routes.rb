@@ -6,13 +6,12 @@ Districtpawsee::Application.routes.draw do
     resources :posts
   end
   
-  resources :posts 
-
-   resources :bookings do
+  resources :posts do
     patch 'time_offer' , on: :member
-    end
+  end
 
-  
+  resources :bookings 
+
 
   resources :users, only: :show
 

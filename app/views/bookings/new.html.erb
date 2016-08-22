@@ -1,0 +1,7 @@
+<h1> New Neighbor Would Like To Offer Their Time ! </h1>
+
+<%=form_for @booking do |f| %>
+  <%= f.button "Accept", name: "booking[button_action]", value: "accept" %>
+  <%= f.button 'Decline', name: "booking[button_action]", value: "decline" %>
+<% end %>
+
