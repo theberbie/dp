@@ -1,17 +1,15 @@
 class BookingsController < ApplicationController
 before_action :authenticate_user! 
 
-  def new
-    @booking = Booking.new
-  end
-
-
   
-  def create
+  
+   def create
+      @booking = Booking.new
       @post = Post.find(params[:post_id])
       if params['button_action'] == "accept"
       @booking.accept = 1
       @post.bookings.create(booking_params.merge(user: current_user))
+      redirect_to post_path(@post)
       flash[:notice] = "You have accepted!"     
       else
         flash[:alert] = "You declined. No worries."

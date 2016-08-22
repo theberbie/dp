@@ -42,10 +42,10 @@
 
   <!-- Button trigger modal -->
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add a Review
+  sample review
 </button>
  
- <%= link_to 'Offer Your Time', time_offer_post_path(@post.id), { action: :time_offer, method: :patch }%>
+ <%= link_to 'Offer Your Time', time_offer_post_path(@post, @booking), { action: :time_offer, method: :patch }%>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,11 +53,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add a Review</h4>
+        <h4 class="modal-title" id="myModalLabel">Sample Booking</h4>
       </div>
       <div class="modal-body">
+      <%= form_for [@post, @booking], url: post_bookings_path(@post,@booking) do |f| %>
+
+        <div class="modal-body">
+          <%= f.button "Accept", name: "button_action", value: "accept" %>
+          <%= f.button 'Decline', name: "button_action", value: "decline" %>
+        </div>
         
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       
@@ -69,5 +74,5 @@
 </div>
 
 
-
+<% end %>
   

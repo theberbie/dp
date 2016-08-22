@@ -8,10 +8,11 @@ Districtpawsee::Application.routes.draw do
   
   resources :posts do
     patch 'time_offer' , on: :member
+  resources :bookings
+
   end
 
-  resources :bookings 
-
+  
 
   resources :users, only: :show
 
