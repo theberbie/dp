@@ -36,6 +36,12 @@ GEM
     bootstrap3-datetimepicker-rails (4.17.37)
       momentjs-rails (>= 2.8.1)
     builder (3.1.4)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -74,6 +80,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mimemagic (0.3.2)
     minitest (4.7.5)
     momentjs-rails (2.11.1)
       railties (>= 3.1)
@@ -162,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5.1)
   bootstrap3-datetimepicker-rails (~> 4.17.37)
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise (>= 3.2.4)
   figaro (>= 1.0.0)

@@ -52,6 +52,7 @@ gem "figaro", ">= 1.0.0"
 
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
+gem 'carrierwave'
 
 
 
