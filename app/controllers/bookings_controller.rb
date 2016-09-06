@@ -1,18 +1,20 @@
 class BookingsController < ApplicationController
 before_action :authenticate_user! 
 
+
   
   
    def create
       @booking = Booking.new
       @post = Post.find(params[:post_id])
-      if params['button_action'] == "accept"
-      @booking.accept = 1
       @post.bookings.create(booking_params.merge(user: current_user))
-      redirect_to post_path(@post)
-      flash[:notice] = "You have accepted!"     
+      if params['status'] == "Accepted"
+      @booking.status = "Accepted"
+      flash[:notice] = "You have accepted!" 
+      redirect_to post_path(@post)    
       else
-        flash[:alert] = "You declined. No worries."
+      @booking.status = "Declined"
+      flash[:alert] = "You declined. No worries."
         redirect_to post_path(@post)
     end
   end
@@ -25,6 +27,6 @@ before_action :authenticate_user!
 
 def booking_params
 
- params.permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to, :accept)
+ params.permit(:pet_name, :pet_age, :pet_breed, :address_line, :zipcode, :description, :event_from, :event_to, :status)
 end
 end
