@@ -1,6 +1,7 @@
 Districtpawsee::Application.routes.draw do
   devise_for :users
   root 'static_pages#index'
+  #get 'notifications', to: 'static_pages#notifications'
   
   namespace :api do
     resources :posts
@@ -15,6 +16,7 @@ Districtpawsee::Application.routes.draw do
   
 
   resources :users, only: :show
+  resources :notifications, only: :show
 
 
   
